@@ -1,0 +1,37 @@
+-----------------------------------------------------------------------------------------------------------------
+Readme Starts here
+This readme file Belongs to OS-assignment 4 Q2 written by Vivaswan Nawani and Animesh Pareek.
+
+1) How to run->
+
+=> To compile : make compile
+=> To clean : make clean
+=> To run: make run
+=> To do everything : make
+
+2) File Details->
+
+=> We are using only one file, "Carpool.c" in this section.
+
+3) File Description ->
+
+=> We are using user given number of passenger threads and one car thread in this code.
+
+=> void* car(void* args) is the routine for the car thread.
+
+=> void* passenger(void* args) is the routine function for the passenger thread.
+
+=> We are using counting semaphores to ensure that only a fixed number of passengers board and deboard the bus when we are loading and unloading.
+
+=> We are using a binary semaphore to ensure that loading, unloading and run are executed one after the other and not together.
+
+4) How are we resolving concurrency bugs?
+
+=> This question has been solved using an approach which takes, both loading and unloading as seperate consumer producer problems, with 
+the car as the producer and the passenger as the consumer.
+
+=> We are avoiding concurrency bugs, by keeping all relevant critical section in a binary or a counting semaphore to ensure that there are no
+concurrency bugs in this code. 
+
+Readme Ends here
+------------------------------------------------------------------------------------------------------------------

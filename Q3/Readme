@@ -1,0 +1,35 @@
+-----------------------------------------------------------------------------------------------------------------
+Readme Starts here
+This readme file Belongs to OS-assignment 4 Q3 written by Vivaswan Nawani and Animesh Pareek.
+
+1) How to run->
+
+=> To compile : make compile
+=> To clean : make clean
+=> To run: make run
+=> To do everything : make
+
+2) File Details->
+
+=> We are using only one file, "Bridge.c" in this section.
+
+3) File Description ->
+
+=> We are using using a Bridge thread to simulate the bridge, left threads for left side cars and right thread for right side cars.
+
+=> void* left(void* args) is the routine for the left car thread.
+
+=> void* right(void* args) is the routine function for the right car thread.
+
+=> void* bridge(void *args) is the routine for the Bridge thread.
+
+=> We are maximizing the use of the bridge and the efficiency of the logic by ensuring that the maximum number of cars that can 
+travel in the road at a given time (5 in this case), do travel if possible with the help of counting sempahores.
+
+4) How do we avoid concurrency bugs?
+
+=> We avoid concurrency bugs by writing the critical condition code inside a binary semaphore, thus seperating *left and *right execution
+and keeping them independent and ensuring that one occurs only after the other is finished and not simultaneiosuly.
+
+Readme Ends here
+------------------------------------------------------------------------------------------------------------------

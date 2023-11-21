@@ -1,0 +1,48 @@
+-----------------------------------------------------------------------------------------------------------------
+Readme Starts here
+This readme file Belongs to OS-assignment 4 Q1 written by Vivaswan Nawani and Animesh Pareek.
+
+1) How to run->
+
+=> To compile : make compile
+=> To clean : make clean
+=> To run: make run
+=> To do everything : make
+
+2) File Details->
+
+=> We are using only one file, "Dining_Philsophers.c" in this section.
+
+3) File Description ->
+
+=> We are using 5 philosopher threads which alternate between thinking state and eating state according to the availablity of resources,
+which are forks and bowls in this case.
+
+=> void* philosopher(void* args) is the routine for the philosopher threads.
+
+=> We are assessing the fairness of this code, by setting up a default execution time and then counting the number of times, a thread
+gets into eating state and thinking state.
+
+4) Why deadlocks can occur in this setup?
+In the classic, Dining Philsophers problem, deadlocks can occur when philosophers are allowed to access resources without any control.
+In such cases, we can have a case, where all philosophers pick up their left fork or their right fork together, resulting in a deadlock,
+where all philosophers are waiting for their other fork to be availaible but that never happens.
+
+5) How does our proposed solution resolve this deadlock?
+We resolve this deadlock by ensuring that the philosopher either picks both forks and bowl at the same time or picks neither of them,
+thus having both concurrency as well as preventing deadlocks.
+
+6) Fairness of this solution:
+Yes, this solution is fair.
+
+                Thinking Count      Eating Count        
+Philosopher 1 - 955                 388                 
+Philosopher 2 - 983                 407                 
+Philosopher 3 - 955                 392                 
+Philosopher 4 - 965                 392                 
+Philosopher 5 - 980                 400    
+
+As we can see from this output, all philosophers get almost equal time to Eat and to think, thus showing the fairness of this solution.
+
+Readme Ends here
+------------------------------------------------------------------------------------------------------------------
